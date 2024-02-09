@@ -1,0 +1,289 @@
+/*!=============== BASE ===============*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: var(--body-font);
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+/* body {
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+  }
+   */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+  text-transform: capitalize;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--white-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*!=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*!========== Colors ==========*/
+
+  --first-color: #fc3d03;
+  --black-color: #000000;
+  --black-color-light: #666666;
+  --white-color: #f2f2f2;
+  --title-color: #000000;
+  --text-color: #595959;
+  --text-color-light: #a3a3a3;
+  --body-color: #182432;
+  --container-color: #d4d4d4;
+
+  /*?========== Font and typography ==========*/
+  /*.5rem = 5px | 1rem = 10px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --biggest-font-size: 5rem;
+  --h1-font-size: 4rem;
+  --h2-font-size: 2.5rem;
+  --h3-font-size: 2rem;
+  --normal-font-size: 2rem;
+  --small-font-size: 1.5rem;
+  --smaller-font-size: 1rem;
+
+  /*?========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  /*?========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*!=============== THEME ===============*/
+
+/*!=============== REUSABLE CSS CLASSES ===============*/
+.wraper {
+  width: 90%;
+  margin-inline: auto;
+  padding-inline: 5rem;
+  /* border: 1px solid red; */
+
+}
+
+#btn {
+  padding: 1rem;
+  background-color: #6c63ff;
+  border-radius: 1.5rem;
+  -webkit-border-radius: 1.5rem;
+  -moz-border-radius: 1.5rem;
+  -ms-border-radius: 1.5rem;
+  -o-border-radius: 1.5rem;
+}
+
+/*!=============== LAYOUT ===============*/
+.grid-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+/*!=============== HEADER & NAV ===============*/
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & .logo {
+    & h1 {
+      font-size: var(--h1-font-size);
+    }
+  }
+
+  & ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    & li {
+      display: inline-block;
+
+      & a {
+        font-size: var(--normal-font-size);
+      }
+    }
+  }
+}
+
+.nav-bar i {
+  font-size: 3rem;
+  display: none;
+}
+
+/*? Navigation for mobile devices */
+
+
+/*? Show menu */
+
+
+/*? Add shadow header */
+
+
+/*? Active link */
+
+
+/*!=============== MAIN ===============*/
+main {
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(to right, #141e30, #243b55);
+}
+
+main::after,
+main::before {
+  content: "";
+  width: 20%;
+  aspect-ratio: 1;
+
+
+}
+
+main::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  rotate: 90deg;
+  background: linear-gradient(45deg, rgba(229, 39, 93, 0.3) 0%, rgba(179, 18, 23, 0)40%);
+}
+
+main::before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(229, 39, 93, 0) 50%, rgba(179, 18, 23, 0.3) 90%);
+  rotate: 90deg;
+}
+
+
+.grid-two-column {
+  height: 100vh;
+  width: 100%;
+
+}
+
+.box-one {
+  display: grid;
+  gap: 2rem;
+
+  & h1 {
+    font-size: var(--biggest-font-size);
+    position: relative;
+
+    &::before {
+      content: "Here's The Apps For You";
+      font-size: var(--normal-font-size);
+      position: absolute;
+      top: -2rem;
+      color: #6c63ff;
+      font-weight: 100;
+    }
+  }
+
+  & p {
+    font-size: var(--normal-font-size);
+    letter-spacing: 1.56px;
+  }
+
+  & #btn {
+    width: 50%;
+  }
+}
+
+/*!=============== ABOUT ===============*/
+
+
+/*!=============== SERVICES ===============*/
+
+
+/*!=============== PROJECTS ===============*/
+
+
+/*!=============== CONTACT ===============*/
+
+/*!=============== FOOTER ===============*/
+
+
+/*!=============== SCROLL BAR ===============*/
+
+
+/*!=============== SCROLL UP ===============*/
+@media (max-width:1200px) {
+  .grid-two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:998px) {
+  html {
+    font-size: 48%;
+  }
+
+  .grid-two-column {
+    grid-template-columns: 1fr;
+    grid-template-rows:1fr 2fr;
+    gap: 2rem;
+    padding-block: 3rem;
+  }
+
+  .box-one{
+    justify-content: center;
+  }
+  .nav-bar ul li {
+    display: none;
+  }
+
+  .nav-bar i {
+    display: inline-block;
+    
+  }
+
+  .box-one,
+  .box-two {
+    width: 100%;
+  }
+  .box-two img{
+    height: 100%;
+    width: 80%;
+
+  }
+  
+}
+@media (max-width:768px) {
+  .grid-two-column {
+    padding-block: 7rem;
+    justify-content: center;
+  }
+  .box-two img{
+    height: 100%;
+    width: 100%;
+  }
+}
